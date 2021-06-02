@@ -1,0 +1,43 @@
+// view images
+docker images
+
+// create images
+docker pull mongo
+
+// kalau mau spesifik tag tambahkan :
+docker pull mongo:4.0.10
+
+// remove image
+docker image rm [id/imagename] [id/imagename]
+ex : docker image rm mongo
+
+// view container yg running, container merupakan instansiasi dri images [iamges yg running]
+docker container ls
+
+// view semua container on and off
+docker container ls --all
+
+// create container
+docker container create --name [nama bebas yg diinginkan] [nama image dan tagnya]
+ex : docker container create --name mongoserver1 mongo:4.0.10
+
+// create container dan open port diluar container
+docker container create --name [nama bebas yg diinginkan] [nama image]
+ex : docker container create --name mongoserver1 -p 27017:27017 mongo:4.0.10
+
+// start container
+docker container start  [containerName/containerId] 
+ex : 
+- docker container start ca0385c0cbec
+- docker container start mongoserver1
+
+// stop container
+docker container stop  [containerName/containerId] [kalau mau multiple tinggal tambahin]
+ex : 
+- docker container start ca0385c0cbec
+- docker container start mongoserver1
+- docker container start mongoserver1 mongoserver2
+
+// remove container (pastikan container di stop dlu sebelum di hapus)
+docker container rm [containerName/containerId] [kalau mau multiple tinggal tambahin]
+ex : docker container rm mongoserver1 mongoserver2
