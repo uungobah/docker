@@ -41,3 +41,6 @@ ex :
 // remove container (pastikan container di stop dlu sebelum di hapus)
 docker container rm [containerName/containerId] [kalau mau multiple tinggal tambahin]
 ex : docker container rm mongoserver1 mongoserver2
+
+// Logs java from container
+docker logs -f java-rabbit
